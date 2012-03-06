@@ -210,14 +210,19 @@
     </script>
     <script src="/assets/application.js"></script>
     <script type="text/javascript" charset="utf-8">
+      var km_id = "280412179828";
+      var meResponse = null;
       FB.getLoginStatus(function(loginResponse){
         if (loginResponse["authResponse"]) {
-          FB.api('/me', function(meResponse){
+          FB.api('/me', function(_meResponse){
+            meResponse = _meResponse;
+            console.log("response: "+meResponse);
             console.log("[E-mail]: "+meResponse["email"]);
+            
             $("#email span").html(meResponse["email"]);
           });
         };
-      })
+      });
     </script>
   </body>
 </html>
