@@ -1,7 +1,7 @@
 LotteryEvent::Application.routes.draw do
   get "home/index"
 
-  get "home/play"
+  post "home/play"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
