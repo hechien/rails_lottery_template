@@ -1,2 +1,15 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div id="fb-root" style="padding:0;margin:0;display:inline;"></div>
+<div class="fb-login-button" data-scope="email">Login with Facebook</div>
+<%= javascript_tag do %>
+
+(function(d){
+   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement('script'); js.id = id; js.async = true;
+   js.src = "//connect.facebook.net/en_US/all.js";
+   ref.parentNode.insertBefore(js, ref);
+ }(document));
+
+<% end %>
+
+<p id="go">Go</p>

@@ -21,7 +21,7 @@ class HomeController < ApplicationController
       end
     else
       respond_to do |f|
-        f.js{ render "already_played" }
+        f.js{ render "already_played", status: 403 }
       end
     end
   end
