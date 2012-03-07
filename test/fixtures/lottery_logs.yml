@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fb_uid: MyString
+  fb_email: MyString
+  win: false
+  stage: 1
+
+two:
+  fb_uid: MyString
+  fb_email: MyString
+  win: false
+  stage: 1
