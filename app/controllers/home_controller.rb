@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   end
 
   def play
+    params[:options].merge!({stage: CURRENT_STAGE})
     if LotteryLog.user_can_play?(params[:options])
       options = params[:options]
       # Random
@@ -14,6 +15,14 @@ class HomeController < ApplicationController
         stage: CURRENT_STAGE,
         win: result
       })
+      
+      respond_to do |f|
+        f.json { render json: {win: result}.as_json }
+      end
+    else
+      respond_to do |f|
+        f.js{ render "already_played" }
+      end
     end
   end
   
